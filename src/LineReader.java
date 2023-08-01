@@ -15,8 +15,12 @@ public class LineReader {
                 br.readLine();
             }
 
-            for(int j = 0 ; j < 10000000 ; j++) {
+            for(int j = 0 ; j < 10000000; j++) {
                 output.add(br.readLine());
+                if(output.get(j) == null) {
+                    output.remove(j);
+                    return output;
+                }
             }
 
             return output;
